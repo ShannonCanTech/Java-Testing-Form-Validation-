@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TV Form</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Movie Form</h1>
+    <form action="#" th:action="@{/movieform}" th:object="${movie}" method="post" class="cf">
+        <div class="half left cf">
+            <input id="input-id" placeholder="ID#" type="number" th:field="*{id}">
+            <span th:if="${#fields.hasErrors('id')}"
+                  th:errors="*{id}" hidden></span>
+            <input type="text" id="input-name" placeholder="Movie name" th:field="*{name}">
+            <span th:if="${#fields.hasErrors('name')}"
+                  th:errors="*{name}" hidden></span>
+            <input type="text" id="input-type" placeholder="Type" th:field="*{type}">
+            <span th:if="${#fields.hasErrors('type')}"
+                  th:errors="*{type}" hidden></span>
+        </div>
+        <div class="half right cf">
+            <textarea name="description" type="text" id="input-description" placeholder="Description" th:field="*{description}"></textarea>
+            <span th:if="${#fields.hasErrors('description')}"
+                  th:errors="*{description}" hidden></span>
+        </div>
+        <input type="submit" value="Submit" id="input-submit">
+    </form>
+
+
+    <!--<form action="#" th:action="@{/movieform}" th:object="${movie}" method="post">
+
+        <label>ID: </label><input type="number" th:field="*{id}">
+        <span th:if="${#fields.hasErrors('id')}"
+              th:errors="*{id}"></span><br>
+
+        <label>Name: </label><input type="text" th:field="*{name}">
+        <span th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}"></span><br>
+
+        <label>Type: </label><input type="text" th:field="*{type}">
+        <span th:if="${#fields.hasErrors('type')}"
+              th:errors="*{type}"></span><br>
+
+        <label>Description: </label><input type="text" th:field="*{description}">
+        <span th:if="${#fields.hasErrors('description')}"
+              th:errors="*{description}"></span><br>
+
+        <input type="submit" value="Submit">
+
+    </form>-->
+</body>
+</html>

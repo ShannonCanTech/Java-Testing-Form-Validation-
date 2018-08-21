@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Confirm</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Movie Confirmation</h1>
+    <div th:inline="text">
+      <p>Movie: [[${movie.name}]]</p>
+      <p>Type: [[${movie.type}]]</p>
+      <p>Description: [[${movie.description}]]</p>
+    </div>
+</body>
+</html>
